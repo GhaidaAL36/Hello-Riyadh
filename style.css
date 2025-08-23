@@ -1,0 +1,320 @@
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+.container {
+  width: 100%;
+  height: 100vh;
+  background-color: rgb(165, 232, 235);
+  position: relative;
+  overflow: hidden;
+  transition: background-color 3s linear;
+  overflow-x: hidden;
+}
+
+.translate {
+  margin: 10px;
+  cursor: pointer;
+}
+
+.translate i {
+  font-size: 32px;
+  color: #fff;
+}
+
+.city {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: auto;
+  min-height: 40vh;
+  object-fit: cover;
+  object-position: bottom;
+  z-index: 2;
+  pointer-events: none;
+}
+
+.day-icon,
+.night-icon {
+  position: absolute;
+  width: 250px;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 1;
+}
+
+.sun-set {
+  animation: sunMove 5s linear forwards;
+}
+.sun-rise {
+  animation: sunRiseMove 5s linear forwards;
+}
+
+@keyframes sunMove {
+  0% {
+    top: 5%;
+    left: 50%;
+    opacity: 1;
+  }
+  50% {
+    top: 80%;
+    left: 80%;
+    opacity: 1;
+  }
+  100% {
+    top: 100%;
+    left: 100%;
+    opacity: 0;
+  }
+}
+
+@keyframes sunRiseMove {
+  0% {
+    top: 100%;
+    left: 100%;
+    opacity: 0;
+  }
+  50% {
+    top: 50%;
+    left: 80%;
+    opacity: 1;
+  }
+  100% {
+    top: 5%;
+    left: 50%;
+    opacity: 1;
+  }
+}
+
+.moon-rise {
+  animation: moonMove 5s linear forwards;
+}
+.moon-set {
+  animation: moonDown 5s linear forwards;
+}
+
+@keyframes moonMove {
+  0% {
+    top: 100%;
+    left: 0%;
+    opacity: 0;
+  }
+  50% {
+    top: 50%;
+    left: 20%;
+    opacity: 1;
+  }
+  100% {
+    top: 5%;
+    left: 50%;
+    opacity: 1;
+  }
+}
+
+@keyframes moonDown {
+  0% {
+    top: 5%;
+    left: 50%;
+    opacity: 1;
+  }
+  50% {
+    top: 50%;
+    left: 20%;
+    opacity: 1;
+  }
+  100% {
+    top: 100%;
+    left: 0%;
+    opacity: 0;
+  }
+}
+
+.container.night {
+  animation: move-to-night 5s linear forwards;
+}
+.container.day {
+  animation: move-to-day 5s linear forwards;
+}
+
+@keyframes move-to-night {
+  0% {
+    background-color: rgb(165, 232, 235);
+  }
+  20% {
+    background-color: rgb(147, 209, 217);
+  }
+  40% {
+    background-color: rgb(109, 165, 180);
+  }
+  60% {
+    background-color: rgb(71, 121, 143);
+  }
+  80% {
+    background-color: rgb(33, 78, 107);
+  }
+  100% {
+    background-color: rgb(7, 19, 50);
+  }
+}
+
+@keyframes move-to-day {
+  0% {
+    background-color: rgb(7, 19, 50);
+  }
+  20% {
+    background-color: rgb(33, 78, 107);
+  }
+  40% {
+    background-color: rgb(71, 121, 143);
+  }
+  60% {
+    background-color: rgb(109, 165, 180);
+  }
+  80% {
+    background-color: rgb(147, 209, 217);
+  }
+  100% {
+    background-color: rgb(165, 232, 235);
+  }
+}
+
+.time-box {
+  position: absolute;
+  top: 20px;
+  right: 20px;
+  color: #fff;
+  text-align: right;
+  font-size: 1.2rem;
+  background-color: rgba(176, 176, 176, 0.3);
+  padding: 8px 12px;
+  border-radius: 8px;
+  display: flex;
+  flex-direction: column;
+  max-width:250px;
+  z-index: 1000;
+}
+
+.time-box h4 {
+  font-size: 24px;
+}
+
+.time-box h6 {
+  font-size: 14px;
+  margin: 2px 0;
+}
+
+.pray-time-box{
+  display: flex;
+  flex-direction: column;
+}
+
+.next-pray{
+  display: flex;
+  gap: 6px;
+  flex-wrap: wrap;
+}
+
+#weather {
+  margin: 12px;
+  font-size: 1.2rem;
+  color: #fff;
+  background-color: rgba(176, 176, 176, 0.3);
+  padding: 8px 12px;
+  border-radius: 8px;
+  display: inline-block;
+  z-index: 1000;
+}
+
+@media (max-width: 600px) {
+  #weather {
+    margin-top: 60px;
+    position: fixed;
+    left: 0;
+    top: 50px;
+    font-size: 12px;
+
+  }.time-box {
+    font-size: 12px;
+  }
+}
+
+
+.cloud {
+  position: absolute;
+  top: 10%;
+  width: 200px;
+  opacity: 0.8;
+  animation: cloudMove 60s linear infinite;
+  z-index: 1000;
+}
+.cloud:nth-child(2) {
+  top: 20%;
+  animation-duration: 80s;
+}
+
+@keyframes cloudMove {
+  0% {
+    left: -250px;
+  }
+  100% {
+    left: 100%;
+  }
+}
+
+.raindrop {
+  position: absolute;
+  width: 2px;
+  height: 10px;
+  background: rgba(103, 123, 152, 0.8);
+  top: -10px;
+  animation: fall linear infinite;
+  z-index: 1000;
+}
+
+@keyframes fall {
+  0% {
+    transform: translateY(0) rotate(10deg);
+    opacity: 1;
+  }
+  100% {
+    transform: translateY(100vh) rotate(10deg);
+    opacity: 0;
+  }
+}
+
+.sand-particle {
+  position: absolute;
+  width: 5px;
+  height: 5px;
+  background: rgba(39, 29, 2, 0.7);
+  border-radius: 50%;
+  animation: sandMove linear infinite;
+}
+
+@keyframes sandMove {
+  0% {
+    top: -10px;
+    left: calc(100% * var(--rand-left));
+    opacity: 0.7;
+  }
+  100% {
+    top: 100%;
+    left: calc(100% * var(--rand-left));
+    opacity: 0;
+  }
+}
+
+.container.rainy {
+  background-color: rgb(58, 92, 122);
+}
+
+.container.sandstorm {
+  background-color: rgb(194, 178, 128);
+}
+
+.container.thunderstorm {
+  background-color: rgb(50, 60, 80);
+}

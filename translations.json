@@ -1,0 +1,51 @@
+{
+  "days": [
+    "الأحد",
+    "الإثنين",
+    "الثلاثاء",
+    "الأربعاء",
+    "الخميس",
+    "الجمعة",
+    "السبت"
+  ],
+  "ampm": {
+    "am": "صباحًا",
+    "pm": "مساءً"
+  },
+  "weather": {
+    "clear sky": "سماء صافية",
+    "few clouds": "بعض الغيوم",
+    "scattered clouds": "غيوم متفرقة",
+    "broken clouds": "غيوم متقطعة",
+    "overcast clouds ": "غيوم ملبدة",
+    "light rain": "أمطار خفيفة",
+    "moderate rain": "أمطار متوسطة",
+    "heavy intensity rain": "أمطار غزيرة",
+    "very heavy rain": "أمطار شديدة",
+    "extreme rain": "أمطار شديدة جدا",
+    "thunderstorm": "عاصفة رعدية",
+    "thunderstorm with light rain": "عاصفة رعدية مع أمطار خفيفة",
+    "thunderstorm with rain": "عاصفة رعدية مع أمطار",
+    "thunderstorm with heavy rain": "عاصفة رعدية مع أمطار غزيرة",
+    "mist": "ضباب",
+    "sand": "رمال",
+    "dust": "غبار",
+    "drizzle": "رذاذ",
+    "heavy intensity drizzle": "رذاذ غزير"
+  },
+  "prayTime": {
+    "msg" :"الصلاة القادمة" ,
+    "now" : "الان وقت صلاة",
+    "next" : "متبقي على الصلاة القادمة",
+    "H" : "س",
+    "M" : "د",
+    "Fajr" : "الفجر",
+    "Sunrise" : "شروق الشمس" ,
+    "Dhuhr" : "الظهر" ,
+    "Asr" : "العصر" ,
+    "Sunset" : "المغرب" ,
+    "Maghrib" : "المغرب" ,
+    "Isha" : "العشاء" ,
+    "Midnight" : "منتصف الليل" 
+  }
+}

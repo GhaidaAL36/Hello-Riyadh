@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.0/css/all.min.css"
+      integrity="sha512-DxV+EoADOkOygM4IR9yXP8Sb2qwgidEmeqAEmDKIOfPRQZOWbXCzLC6vjbZyy0vPisbH2SyW27+ddLVCN+OMzQ=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+    <link rel="stylesheet" href="style.css" />
+    <script defer src="app.js"></script>
+    <title>My City</title>
+  </head>
+  <body>
+    <div class="container">
+      <img src="assets/background.svg" class="city" alt="" />
+      <img src="assets/sun.svg" class="day-icon" />
+      <img src="assets/moon.svg" class="night-icon" />
+      <div class="effects"></div>
+
+      <div class="time-box">
+        <h4 id="time-now"></h4>
+        <div class="pray-time-box">
+          <h5 id="pray-time"></h5>
+          <div class="next-pray">
+            <p></p>
+          </div>
+        </div>
+        <h6 id="day-now"></h6>
+        <h6 id="date-now"></h6>
+        <h6 id="date-hijri"></h6>
+      </div>
+      <div id="weather">Loading weather for Riyadh...</div>
+    </div>
+  </body>
+</html>
